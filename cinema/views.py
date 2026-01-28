@@ -1,7 +1,7 @@
 from rest_framework import mixins, status, viewsets
+from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.generics import GenericAPIView
 
 from cinema.models import Actor, CinemaHall, Genre, Movie
 from cinema.serializers import (
@@ -118,3 +118,9 @@ class CinemaHallViewSet(
 class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
+
+
+GenreList = GenreListCreateAPIView
+GenreDetail = GenreDetailAPIView
+ActorList = ActorListCreateAPIView
+ActorDetail = ActorDetailAPIView
